@@ -1,0 +1,36 @@
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import About from './pages/About';
+import Blog from './pages/Blog';
+import Contact from './pages/Contact';
+import Project from './pages/Project';
+import Service from './pages/Service';
+import Undefine from './pages/Undefine';
+import './components/AppNav';
+import Header from './components/Header';
+import Footer from './components/Footer';
+
+
+const App = () => {
+  return (
+    <div>
+        <BrowserRouter>
+        <Header/>
+          <Routes>
+              <Route path='/' element={<Home/>}/> 
+              <Route path='/about' element={<About/>}/> 
+              <Route path='/blog' element={<Blog/>}/> 
+              <Route path='/contact' element={<Contact/>}/> 
+              <Route path='/project' element={<Project/>}/> 
+              <Route path='/service' element={<Service/>}/> 
+              <Route path='*' element={<Undefine/>}/> 
+          </Routes>
+          <Footer/>
+        </BrowserRouter>
+        
+    </div>
+  );
+};
+
+export default App;
